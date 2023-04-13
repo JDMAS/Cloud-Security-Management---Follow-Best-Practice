@@ -17,7 +17,7 @@
           "displayName": "Billable Consumtion above defined threshold on daily basis",
           "description": "This analytic will make an INFORMATIONAL incident, if daily billable consumption reaches a predefined threshold in Gb",
           "severity": "Informational",
-          "enabled": true,
+          "enabled": false,
           "query": "//This query can be used to alert an user in sentinel when the daily data ingestion volume is more than XXX-GB \n//You can change the threshold according to your environment.\nUsage \n| where TimeGenerated > startofday(ago(1d)) \n| where StartTime > startofday(ago(1d)) \n| where IsBillable == true \n| summarize TotalVolumeGB = sum(Quantity) / 1000 by bin(StartTime, 1d) \n| summarize Tot=make_list_if(TotalVolumeGB, StartTime == startofday(ago(1d))) \n| where Tot[0] > 0.001 //threshold in Gb\n| project-rename TotalVolumeRecievedGB=Tot\n",
           "queryFrequency": "P1D",
           "queryPeriod": "P1D",
