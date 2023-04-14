@@ -27,7 +27,7 @@ jobs:
       directory: '${{ github.workspace }}'
       cloudEnv: 'AzureCloud'
       creds: ${{ secrets.AZURE_SENTINEL_CREDENTIALS_a9196f8d8ce644c994d6eac121f46161 }}
-      contentTypes: 'AnalyticsRule,AutomationRule,HuntingQuery,Parser,Playbook,Workbook'
+      contentTypes: 'AnalyticsRule,AutomationRule,HuntingQuery,Parser,Playbook'
       branch: 'CSM'
       sourceControlId: 'a9196f8d-8ce6-44c9-94d6-eac121f46161'
       rootDirectory: '${{ github.workspace }}'
